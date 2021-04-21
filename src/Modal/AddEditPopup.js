@@ -54,6 +54,7 @@ class AddEditPopup extends Component {
             case "description": item.Description = e.target.value; break;
             case "price": item.Price = e.target.value; break;
             case "prdName": item.ProductName = e.target.value; break;
+            default:return;
         }
         this.setState({ item })
     }
@@ -61,7 +62,7 @@ class AddEditPopup extends Component {
     addUpdate = () => {
         let { mode } = this.props;
         let { item } = this.state;
-        mode == "Edit" ? this.props.updateItem(item) : this.props.addItem(item);
+        mode === "Edit" ? this.props.updateItem(item) : this.props.addItem(item);
     }
 
     render() {
@@ -72,7 +73,7 @@ class AddEditPopup extends Component {
                 <div style={modalContainer}>
                     <Form>
                         <Button className="closebtn" onClick={this.props.mode !== "Edit" ? this.props.handleCloseModal : this.props.handleCloseView}>X </Button>
-                        <div className="hdng"> {this.props.mode == "Edit" ? "Update" : "Add"} Product </div>
+                        <div className="hdng"> {this.props.mode === "Edit" ? "Update" : "Add"} Product </div>
                         <hr />
                         <Form.Group controlId="itemName">
                             <Form.Label>Item Name :</Form.Label>
@@ -100,7 +101,7 @@ class AddEditPopup extends Component {
                         </Form.Group>
                     </Form>
                     <Button type="submit" id="submitbtn" variant="primary" onClick={this.addUpdate} >
-                        {this.props.mode == "Edit" ? "Update" : "Add"}
+                        {this.props.mode === "Edit" ? "Update" : "Add"}
                     </Button>
 
                 </div>

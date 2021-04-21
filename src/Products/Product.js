@@ -26,7 +26,7 @@ class Products extends Component {
     this.handleCloseView();
     let {selectedProduct,items}=this.state;
     let itemList =items.map((item)=>{
-      if(selectedProduct.id == item.id){
+      if(selectedProduct.id === item.id){
        item.ProductName = selectedProduct.ProductName;
        item.Description = selectedProduct.Description;
        item.Price = selectedProduct.Price;
@@ -41,13 +41,21 @@ class Products extends Component {
     const items = Object.assign([], this.state.items);
     if (this.state.items.length > 0) {
       const newId = items[items.length - 1].id + 1;
+      let newItem = {
+        ...item,
+        id:newId
+      }
       this.setState({
-        items: items.concat(item)
+        items: items.concat(newItem)
       })
     }else{
         const newId = 1;
+        let newItem = {
+          ...item,
+        id:newId
+        }
         this.setState({
-          items: items.concat(item)
+          items: items.concat(newItem)
         })
       }
   }
@@ -55,8 +63,7 @@ class Products extends Component {
 
 
   handleDelete = (id, e) => {
-    const filteredItems = this.state.items.filter(item =>
-      item.id !== id);
+    const filteredItems = this.state.items.filter(item =>item.id !== id);
     this.setState({
       items: filteredItems
     })
@@ -65,7 +72,7 @@ class Products extends Component {
 
   handleView = (id) => {
     const filteredItems = this.state.items.filter(item => {
-      if(item.id == id){
+      if(item.id === id){
        item.Price = item.Price.replace("$","");
       }
       return item
@@ -82,7 +89,7 @@ class Products extends Component {
   handleProductList = () => this.setState({ showProducts: !this.state.showProducts })
 
   render() {
-    let {items,showViewModal,selectedProduct,showModal,showProducts} = this.state;
+    let {items,showViewModal,showModal,showProducts} = this.state;
     return (
       <ErrorBoundary>
         <Navbar bg="dark" className="justify-content-between" style={{ padding: '20px' }}>
