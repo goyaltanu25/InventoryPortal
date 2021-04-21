@@ -1,0 +1,14 @@
+.closebtn{
+   position: absolute;
+   color: black !important; 
+   background-color: transparent !important;
+   border-color: transparent !important;
+   right: 0;
+   top: 0;
+ }
+ 
+ .hdng{
+     font-size:x-large;
+     font-weight: bolder;
+     color: #007bff;
+ }

@@ -1,0 +1,12 @@
+.link{
+    color:  rgb(212, 143, 201);;
+    padding-right: 10px;
+    text-decoration: none;
+}  
+a:hover {
+    color: rgb(212, 143, 201) !important;
+    text-decoration: none !important;
+}
+.active{
+color: rgb(212, 143, 201);
+}

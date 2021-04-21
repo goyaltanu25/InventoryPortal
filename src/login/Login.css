@@ -1,0 +1,18 @@
+.wrapper {
+    text-align: center;
+}
+
+.inptWidth{
+    width :50%;
+    margin: auto;
+}
+.buttonwidth{
+    width: 50%;
+}
+.hdg{
+color:#007bff;
+font-weight: bolder;
+}
+.error {
+   color: red !important;
+  }
