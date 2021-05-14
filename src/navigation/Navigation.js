@@ -7,8 +7,7 @@ const Navigation = () => {
 return (
     <Navbar bg="dark" className="justify-content-between">
         <Navbar.Brand style={{color:"white"}}>
-        <img src="../../public/logo192.png"  alt="logo"/>
-          React Inventory App
+          Inventory App
          </Navbar.Brand>
        <Nav>
         <NavLink activeClassName="active" className="link" to="/login">Login</NavLink>
